@@ -1,3 +1,8 @@
+Hello!
+
+
+
+
 # 🚀 Jupiter Arbitrage Bot v1🚀
 
 Tired of memecoin plays like sniping, bundling, or copy trading ?
