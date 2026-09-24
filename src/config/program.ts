@@ -4,9 +4,9 @@ import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 import { Connection, Keypair } from "@solana/web3.js";
 import idl from "../idl/idl.json";
 import { JupiterRouteV6 } from "../idl/types";
-import { mainnetPRC, privateKey } from "./loadEnv";
+import { mainnetRPC, privateKey } from "./loadEnv";
 
-const connection = new Connection(mainnetPRC, "processed")
+const connection = new Connection(mainnetRPC, "processed")
 const payer = Keypair.fromSecretKey(bs58.decode(privateKey));
 
 const wallet = new NodeWallet(payer);

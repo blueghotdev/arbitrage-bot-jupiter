@@ -12,7 +12,7 @@ const required = (name: string): string => {
 };
 
 const privateKey = required("PRIVATE_KEY");
-const mainnetPRC = required("MAINNET_RPC");
+const mainnetRPC = required("MAINNET_RPC");
 
 // This is the margin the round trip has to clear before a transaction is sent.
 // parseInt returns NaN for anything it cannot read, and every comparison
@@ -29,6 +29,6 @@ if (!Number.isFinite(upperAmountWithDecimal) || upperAmountWithDecimal < 0) {
 
 export {
     privateKey,
-    mainnetPRC,
+    mainnetRPC,
     upperAmountWithDecimal
 }

@@ -20,12 +20,12 @@ const assertQuote = (body: unknown, label: string): JupiterQuoteResponse => {
 };
 
 const getJupiterQuote = async (
-    qouoteUrl : string,
+    quoteUrl : string,
     baseCoin: string,
     quoteCoin: string,
     amountIn: number
 ): Promise<{ quote1: JupiterQuoteResponse; quote2: JupiterQuoteResponse }> => {
-    const quote1Url = `${qouoteUrl}?inputMint=${baseCoin}&outputMint=${quoteCoin}&amount=${amountIn}&slippageBps=${SLIPPAGE_BPS}`;
+    const quote1Url = `${quoteUrl}?inputMint=${baseCoin}&outputMint=${quoteCoin}&amount=${amountIn}&slippageBps=${SLIPPAGE_BPS}`;
 
     const res1 = await fetch(quote1Url);
     // const res1 = await fetch(quote1Url, {
@@ -34,7 +34,7 @@ const getJupiterQuote = async (
     if (!res1.ok) throw new Error(`quote1 fetch failed: ${res1.status}`);
     const quote1 = assertQuote(await res1.json(), "quote1");
 
-    const quote2Url = `${qouoteUrl}?inputMint=${quoteCoin}&outputMint=${baseCoin}&amount=${quote1.outAmount}&slippageBps=${SLIPPAGE_BPS}`;
+    const quote2Url = `${quoteUrl}?inputMint=${quoteCoin}&outputMint=${baseCoin}&amount=${quote1.outAmount}&slippageBps=${SLIPPAGE_BPS}`;
 
     const res2 = await fetch(quote2Url);
     // const res2 = await fetch(quote2Url, {
