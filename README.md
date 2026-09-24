@@ -119,6 +119,8 @@ Solana has multiple transaction confirmation gateways, including:
 
 - Improves arbitrage success rate
 
+- This is bot
+
 ## Supported Dex
 |     **Dex**     |  **Address**  |
 | --------------------- | ------------- |
